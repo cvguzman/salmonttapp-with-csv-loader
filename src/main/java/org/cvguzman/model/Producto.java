@@ -1,7 +1,7 @@
 package org.cvguzman.model;
 
 import org.cvguzman.data.RegistroExcel;
-
+// Creación de clase para realizar Constructor
 public class Producto {
     private String nombreProducto;
     private String areaProduccion;

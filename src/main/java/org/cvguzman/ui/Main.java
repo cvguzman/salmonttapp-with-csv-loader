@@ -35,18 +35,26 @@ public class Main {
                 ));
         areasDeProduccion.forEach((area, cantidad) -> System.out.println(area + ": " + cantidad));
 
+        System.out.println(" ");
+
+        // Se comienza a visualizar la carga, lectura y extracción desde el Registros.xslx
         System.out.println("::::::REGISTRO EXCEL SALMONTT::::::");
 
         RegistroExcel registroExcel = new RegistroExcel();
         registroExcel.subirRegistroExcel("Registros.xlsx");
         registroExcel.subirTodos();
 
+        System.out.println(" ");
 
+        // Filtro del archivo excel Registros.xslx
         System.out.println("::::::FILTRO POR AREA PRODUCCION DULCE DEL ARCHIVO EXCEL::::::");
 
+        // Muestra los elementos deseados
         RegistroExcel registro = new RegistroExcel();
         registro.subirRegistroExcel("Registros.xlsx");
         List<Producto> cultivos = registroExcel.traerPorCultivo("dulce");
+
+        // Se crea forEach para recorrer la lista y extraer
         for (Producto c : cultivos) {
             System.out.println(c);
         }

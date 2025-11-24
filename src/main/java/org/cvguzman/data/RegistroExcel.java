@@ -8,11 +8,12 @@ import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+// Se crea clase para la lectura y carga de archivo excel llamado Registros.xlsx
 public class RegistroExcel {
 
     private List<Producto> lista = new ArrayList<>();
-    private Producto Producto;
 
+    // Indicamos la ruta del archivo para buscarlo y cargarlo con la ayuda de la dependecia Apache POI poi-ooxml
     public void subirRegistroExcel(String ruta) {
         try (FileInputStream fileInputStream = new FileInputStream(ruta)) {
             XSSFWorkbook libro = new XSSFWorkbook(fileInputStream);
@@ -28,6 +29,8 @@ public class RegistroExcel {
                 agregar(registro);
             }
             libro.close();
+
+            // Manejamos el error
         }catch (Exception e) {
             e.printStackTrace();
         }finally {
@@ -45,6 +48,7 @@ public class RegistroExcel {
         }
     }
 
+    // Se crean listas para extraer datos
 public List<Producto> traerProducto(String producto) {
         List<Producto> traer = new ArrayList<>();
         for (Producto registros : lista) {
