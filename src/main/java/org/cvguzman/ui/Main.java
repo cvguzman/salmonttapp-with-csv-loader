@@ -1,0 +1,54 @@
+package org.cvguzman.ui;
+
+import org.cvguzman.data.GestorDatos;
+import org.cvguzman.data.RegistroExcel;
+import org.cvguzman.model.Producto;
+
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class Main {
+    public static void main(String[] args) {
+        // Muestra los elementos
+        GestorDatos gestorDatos = new GestorDatos();
+        List<Producto> archivoInventario = gestorDatos.subirInventario("centros.txt");
+
+        System.out.println("::::::INVENTARIO SALMONTT::::::");
+        // Se implementa un for each para recorrer el archivo centros.txt
+        for (Producto productos : archivoInventario) {
+            System.out.println(productos);
+        }
+
+        System.out.println(" ");
+
+        System.out.println("::::::FILTRO POR AREA PRODUCCION::::::");
+
+        // Se realiza filtro de área produccion
+        // Utilizamos Map para crear un nuevo arreglo con el predicado que correspone, en este caso el area de producción.
+        // Aprovechamos el método collect  para dividir nuestro arreglo en tipos de área
+        //  y el método ´counting´ para contar cuantas veces se repite cada área.
+        Map<String, Long> areasDeProduccion = archivoInventario.stream()
+                .collect(Collectors.groupingBy(
+                        Producto::getAreaProduccion,
+                        Collectors.counting()
+                ));
+        areasDeProduccion.forEach((area, cantidad) -> System.out.println(area + ": " + cantidad));
+
+        System.out.println("::::::REGISTRO EXCEL SALMONTT::::::");
+
+        RegistroExcel registroExcel = new RegistroExcel();
+        registroExcel.subirRegistroExcel("Registros.xlsx");
+        registroExcel.subirTodos();
+
+
+        System.out.println("::::::FILTRO POR AREA PRODUCCION DULCE DEL ARCHIVO EXCEL::::::");
+
+        RegistroExcel registro = new RegistroExcel();
+        registro.subirRegistroExcel("Registros.xlsx");
+        List<Producto> cultivos = registroExcel.traerPorCultivo("dulce");
+        for (Producto c : cultivos) {
+            System.out.println(c);
+        }
+    }
+}

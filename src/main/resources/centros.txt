@@ -1,0 +1,12 @@
+Trucha;Agua dulce;514
+Tilapia;Agua dulce;482
+Cangrejo;Agua dulce;390
+Camarón agua dulce;Agua dulce;1520
+Salmón del atlantico;Agua salada;1480
+Corvina;Agua salada;1710
+Lenguado;Agua salada;850
+Camarón marino;Agua salada;897
+Langostino;Agua salada;380
+Ostión;Agua salada;897
+Almejas;Agua salada;3387
+Ostra;Agua salada;1870
