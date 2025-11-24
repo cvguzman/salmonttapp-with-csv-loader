@@ -78,7 +78,7 @@ Contiene los datos utilizados por la aplicación para cargar y procesar informac
 1. Clona el repositorio desde GitHub:
 
 ```bash
-git clone 
+git clone https://github.com/cvguzman/salmonttapp-with-csv-loader.git
 ```
 
 2. Abre el proyecto en IntelliJ IDEA.
@@ -90,7 +90,7 @@ git clone
 
 ---
 
-**Repositorio GitHub:** 
+**Repositorio GitHub:** https://github.com/cvguzman/salmonttapp-with-csv-loader
 **Fecha de entrega:** 24/11/2025
 
 ---
