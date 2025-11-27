@@ -30,8 +30,8 @@ public class UnidadOperativa {
     // Se crea toString() para información mas legible en consola
     public String toString() {
         return "UnidadOperativa{" +
-                "nombre= ' " + nombre + '\''  +
-                ", comuna= ' " + nombre + '\''  +
+                "nombre= '"+ nombre + '\''  +
+                ", comuna= '"+ nombre + '\''  +
                 '}' ;
     }
 }

@@ -4,11 +4,11 @@ package org.cvguzman.model;
 public class CentroCultivo  extends UnidadOperativa{
 
     // Creación atributo privado
-    private int numeroJaulas;
+    private int toneladasProducción;
 
     // Se crea constructor con atributos incluyendo atributos superclase
-    public CentroCultivo(String nombre, String comuna, int numeroJaulas) {
+    public CentroCultivo(String nombre, String comuna, int toneladasProducción) {
         super(nombre, comuna);
-        this.numeroJaulas = numeroJaulas;
+        this.toneladasProducción = toneladasProducción;
     }
 }
