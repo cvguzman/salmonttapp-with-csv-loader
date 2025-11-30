@@ -29,16 +29,16 @@ SalmonttApp/
  │         │          ├── data/
  │         │          │     ├── GestorDatos.java
  │         │          │     └── RegistroExcel.java
- |          |           |     └── GestorUnidades.java
+ |         |          |     └── GestorUnidades.java
  │         │          ├── model/
  │         │          │     └── Producto.java
- |          |           |     └── CentroCultivo.java
- |          |           |     └── PlantaProceso.java
- |          |           |     └── UnidadOperativa.java
+ |         |          |     └── CentroCultivo.java
+ |         |          |     └── PlantaProceso.java
+ |         |          |     └── UnidadOperativa.java
  │         │          └── ui/
- │         │                  └── Main.java
+ │         │                └── Main.java
  │         └── resources/
- |                              └── centros.txt
+ |                          └── centros.txt
  ├── target/
  ├── .gitignore
  ├── pom.xml
@@ -51,21 +51,38 @@ El proyecto está ordenado con una estructura sencilla que separa las tareas:
 # org.cvguzman.data.
 
 Tiene clases que se ocupan de manejar y acceder a datos.
-La clase GestorDatos lee y carga datos desde archivos (como Excel o TXT). Agrupa la lógica sobre el acceso a la información externa.
-La clase RegistroExcel en hoja de cálculo Clase base que facilita leer registros de un archivo Excel. Ofrece métodos comunes para trabajar con filas y celdas.
 
+La clase GestorDatos lee y carga datos desde archivos .txt. Agrupa la lógica sobre el acceso a la información externa.
+
+La clase RegistroExcel en hoja de cálculo facilita leer registros de un archivo .xlsx. Ofrece métodos comunes para trabajar con filas y celdas.
+
+La clase Gestor unidades se encarga de crear y entregar objetos de las subclases, cumple el rol de proovedor de datos
 # org.cvguzman.model.
 
 Incluye los clases que representan las partes de SalmonttApp.
+
 La clase Producto: Modelo que habla de un producto del sistema con cosas como nombre, zona de hacer, tipo de planta y cuantas toneladas.
+
+
+La clase CentroCultivo agrega atributos propios del cultivo en mar: capacidadTonelada.
+
+La clase PlantaProceso modela una planta de procesamiento con capacidad diaria de producción.
 
 # org.cvguzman.ui.
 
 Tiene la pantalla/interfaz principal del app. La clase Main que corre la aplicación.
-El flujo general empieza aquí: c͏argar d͏atos ͏y mostr͏ar en cons͏ola.
+El flujo general empieza aquí: c͏argar d͏atos ͏y mostr͏ar en cons͏ola:
+
+- Datos en el archivo centros.txt
+- Filtro de datos de archivo centros.txt
+- Datos en el archivo Registros.xlsx
+- Filtro de datod archivo Registros.xlsx
+- Herencia de la superclase UnidadOperativa a subclases CentroCultivos y PlantaProceso.
+
+
 
 # resources
-Para͏ pon͏e͏r archivos ͏fuera͏ q͏ue necesita la app, como el arch͏ivo Excel Re͏g͏istros͏.xlsx.z d͏el usuario͏ o lugar donde es͏tá la entrada del͏ ͏programa.
+Para͏ pon͏e͏r archivos ͏fuera͏ q͏ue necesita la app, como el arch͏ivo Excel Re͏g͏istros͏.xlsx d͏el usuario͏ o lugar donde es͏tá la entrada del͏ ͏programa.
 
 # pom.xml
 
