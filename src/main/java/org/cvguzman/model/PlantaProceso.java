@@ -1,7 +1,7 @@
 package org.cvguzman.model;
 
 // Se crea subclase que  heredará atributos de la superclase
-public class PlantaProceso  extends UnidadOperativa{
+public class PlantaProceso  extends UnidadOperativa {
 
     // Se crea atributo para constructor
     private int capacidadProceso;
@@ -10,5 +10,14 @@ public class PlantaProceso  extends UnidadOperativa{
     public PlantaProceso(String nombre, String comuna, int capacidadProceso) {
         super(nombre, comuna);
         this.capacidadProceso = capacidadProceso;
+    }
+
+    // Se crea toString() para información mas legible en consola
+    public String toString() {
+        return "UnidadOperativa{" +
+                "nombre= '" + getNombre() + '\'' +
+                ", comuna= '" + getComuna() + '\'' +
+                ", capacidadProceso= '" + capacidadProceso + '\'' +
+                '}';
     }
 }

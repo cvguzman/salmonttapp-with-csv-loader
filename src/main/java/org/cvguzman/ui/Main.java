@@ -77,7 +77,7 @@ public class Main {
         // Se muestra en consola resultados a través de un for each
         for (UnidadOperativa u : unidades) {
             System.out.println(u);
-            System.out.println("-----------------------------------------------------------------------------------------");
+            System.out.println("------------------------------------------------------------------------------------------------------------------");
         }
     }
 }
