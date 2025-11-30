@@ -1,5 +1,5 @@
 ![Duoc UC](https://www.duoc.cl/wp-content/uploads/2022/09/logo-0.png)
-# 🧠 Actividad Sumativa Semana 5 – Desarrollo Orientado a Objetos I
+# 🧠 Actividad Formativa Semana 6 – Desarrollo Orientado a Objetos I
 
 ## 👤 Autor del proyecto
 - **Nombre completo:** Cinthya Guzmán
@@ -10,8 +10,7 @@
 ---
 
 ## 📘 Descripción general del sistema
-Este proyecto corresponde a la Actividad Sumativa de la asignatura *Desarrollo Orientado a Objetos I*. Se trata de un sistema organizado en paquetes, aplicando principios de encapsulamiento, composición y reutilizzación de clases
-Donde se debe construir una aplicación que utilice una estructura de datos propia o una libreria diseñada por mi.
+Este proyecto corresponde a la Actividad Sumativa de la asignatura *Desarrollo Orientado a Objetos I*. Se trata de un sistema organizado en paquetes, aplicando principios de encapsulamiento, composición  herencia y reutilizzación de clases
 El proyecto fue desarrollado a partir de un caso contextualizado (salmontt), abordando problemáticas reales y proponiendo una solución estructurada, modular y reutilizable.
 
 ---
@@ -30,11 +29,16 @@ SalmonttApp/
  │         │          ├── data/
  │         │          │     ├── GestorDatos.java
  │         │          │     └── RegistroExcel.java
+ |          |           |     └── GestorUnidades.java
  │         │          ├── model/
  │         │          │     └── Producto.java
+ |          |           |     └── CentroCultivo.java
+ |          |           |     └── PlantaProceso.java
+ |          |           |     └── UnidadOperativa.java
  │         │          └── ui/
- │         │                └── Main.java
+ │         │                  └── Main.java
  │         └── resources/
+ |                              └── centros.txt
  ├── target/
  ├── .gitignore
  ├── pom.xml
