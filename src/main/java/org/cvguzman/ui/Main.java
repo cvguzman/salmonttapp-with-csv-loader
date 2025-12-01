@@ -8,6 +8,7 @@ import org.cvguzman.model.PlantaProceso;
 import org.cvguzman.model.Producto;
 import org.cvguzman.model.UnidadOperativa;
 
+import java.lang.instrument.UnmodifiableModuleException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -68,11 +69,14 @@ public class Main {
         System.out.println("::::::::HERENCIA::::::::");
         System.out.println(" ");
 
+        System.out.println("A continuación mostramos @override");
+        System.out.println(" ");
 
         // Ejecutamos la superclase de UnidadOperativa en las subclases CentroCultivo y PlantaProceso
-
         GestorUnidades gestor = new GestorUnidades();
         var unidades = gestor.cargarUnidades();
+
+        System.out.println(" ");
 
         // Se muestra en consola resultados a través de un for each
         for (UnidadOperativa u : unidades) {

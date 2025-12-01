@@ -12,6 +12,13 @@ public class CentroCultivo  extends UnidadOperativa {
         this.toneladasProducción = toneladasProducción;
     }
 
+    @Override
+    public void locacionProducto() {
+        System.out.println("El centro de cultivo produce " + toneladasProducción + " toneladas " +
+                " en " + getComuna());
+    }
+
+
     // Se crea toString() para información mas legible en consola
     public String toString() {
         return "UnidadOperativa{" +
