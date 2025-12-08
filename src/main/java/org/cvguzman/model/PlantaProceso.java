@@ -13,8 +13,8 @@ public class PlantaProceso  extends UnidadOperativa {
     }
 
     @Override
-    public void locacionProducto() {
-        System.out.println("La planta de cultivo produce " + capacidadProceso + " circuitos de 10000" +
+    public void mostrarInformacion() {
+        System.out.println("La planta de proceso " + getNombre() +  "  produce " + capacidadProceso + " circuitos de 10000" +
                 " en " + getComuna());
     }
 

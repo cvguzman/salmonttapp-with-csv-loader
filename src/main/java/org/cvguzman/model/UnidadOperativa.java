@@ -12,7 +12,7 @@ public class UnidadOperativa {
         this.comuna = comuna;
     }
 
-    public void locacionProducto() {
+    public void mostrarInformacion() {
         System.out.println("La planta  " + nombre + " es producido en " + comuna);
     }
 

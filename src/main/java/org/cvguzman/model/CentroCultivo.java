@@ -6,6 +6,7 @@ public class CentroCultivo  extends UnidadOperativa {
     // Creación atributo privado
     private int toneladasProducción;
 
+    
     // Se crea constructor con atributos incluyendo atributos superclase
     public CentroCultivo(String nombre, String comuna, int toneladasProducción) {
         super(nombre, comuna);
@@ -13,8 +14,8 @@ public class CentroCultivo  extends UnidadOperativa {
     }
 
     @Override
-    public void locacionProducto() {
-        System.out.println("El centro de cultivo produce " + toneladasProducción + " toneladas " +
+    public void mostrarInformacion() {
+        System.out.println("El centro de cultivo" + getNombre() + " produce " + toneladasProducción + " toneladas " +
                 " en " + getComuna());
     }
 

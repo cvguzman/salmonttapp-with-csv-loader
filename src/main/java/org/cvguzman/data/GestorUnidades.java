@@ -16,17 +16,17 @@ public class GestorUnidades {
 
         // Se crean objetos para CentroCultivo
         CentroCultivo centro1 = new CentroCultivo("Centro Llanquihue", "Puerto Montt", 116);
-        centro1.locacionProducto();
+        centro1.mostrarInformacion();
 
         CentroCultivo centro2 = new CentroCultivo("Centro Frutillar", "Puerto Montt", 322);
-        centro2.locacionProducto();
+        centro2.mostrarInformacion();
 
         // Se crean objetos para PlantaProceso
         PlantaProceso planta1 = new PlantaProceso("Planta Pacific Blue", "Aysén", 3000);
-       planta1.locacionProducto();
+       planta1.mostrarInformacion();
 
        PlantaProceso planta2 = new PlantaProceso("Planta Aqua Chile", "Río Bueno", 2500);
-       planta2.locacionProducto();
+       planta2.mostrarInformacion();
 
         // Agregamos en la lista
         unidades.add(centro1);
