@@ -3,13 +3,8 @@ package org.cvguzman.ui;
 import org.cvguzman.data.GestorDatos;
 import org.cvguzman.data.GestorUnidades;
 import org.cvguzman.data.RegistroExcel;
-import org.cvguzman.model.CentroCultivo;
-import org.cvguzman.model.PlantaProceso;
-import org.cvguzman.model.Producto;
-import org.cvguzman.model.UnidadOperativa;
+import org.cvguzman.model.*;
 
-import java.lang.instrument.UnmodifiableModuleException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -69,7 +64,7 @@ public class Main {
         System.out.println("::::::::HERENCIA::::::::");
         System.out.println(" ");
 
-        System.out.println("A continuación mostramos @override");
+        System.out.println("A continuación mostramos interfaz Registrable");
         System.out.println(" ");
 
         // Ejecutamos la superclase de UnidadOperativa en las subclases CentroCultivo y PlantaProceso
@@ -79,9 +74,16 @@ public class Main {
         System.out.println(" ");
 
         // Se muestra en consola resultados a través de un for each
-        for (UnidadOperativa u : unidades) {
-            System.out.println(u);
-            System.out.println("------------------------------------------------------------------------------------------------------------------");
+        for (Registrable r : unidades) {
+            r.mostrarResumen();
+            if (r instanceof CentroCultivo) {
+                System.out.println("Este es el resumen para Centro cultivo");
+            } else if (r instanceof PlantaProceso) {
+                System.out.println("Este es el resumen para Planta Proceso");
+            }
+        }
+
+        System.out.println(" ");
+
         }
     }
-}
