@@ -1,7 +1,7 @@
 package org.cvguzman.model;
 
 // Se crea la clase padre para especificar el lugar de cultivo de los peces
-public class UnidadOperativa {
+public abstract class UnidadOperativa implements Registrable {
 
     private String nombre;
     private String comuna;
@@ -12,7 +12,9 @@ public class UnidadOperativa {
         this.comuna = comuna;
     }
 
-    public void mostrarInformacion() {
+    // Se crea interfaz que sera usado en clases hijas
+@Override
+    public void mostrarResumen() {
         System.out.println("La planta  " + nombre + " es producido en " + comuna);
     }
 
