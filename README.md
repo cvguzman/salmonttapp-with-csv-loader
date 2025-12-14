@@ -57,7 +57,8 @@ La clase GestorDatos lee y carga datos desde archivos .txt. Agrupa la lógica so
 La clase RegistroExcel en hoja de cálculo facilita leer registros de un archivo .xlsx. Ofrece métodos comunes para trabajar con filas y celdas.
 
 La clase Gestor unidades se encarga de crear y entregar objetos de las subclases, cumple el rol de proovedor de datos, 
-además de implementar sobrescritura @overidde mostrarInformacion()
+además de implementar la interfaz mostrarResumen() a clases hijas
+
 # org.cvguzman.model.
 
 Incluye los clases que representan las partes de SalmonttApp.
@@ -66,10 +67,11 @@ La clase Producto: Modelo que habla de un producto del sistema con cosas como no
 
 
 La clase CentroCultivo agrega atributos propios del cultivo en mar: capacidadTonelada.
-Además de implementar sobrescritura @overidde mostrarInformacion()
+Además de usar la interfaz mostrarResumen()
 
 La clase PlantaProceso modela una planta de procesamiento con capacidad diaria de producción.
-Además de implementar sobrescritura @overidde mostrarInformacion()
+Además de usar la interfaz mostrarResumen()
+
 # org.cvguzman.ui.
 
 Tiene la pantalla/interfaz principal del app. La clase Main que corre la aplicación.
@@ -80,7 +82,7 @@ El flujo general empieza aquí: c͏argar d͏atos ͏y mostr͏ar en cons͏ola:
 - Datos en el archivo Registros.xlsx
 - Filtro de datod archivo Registros.xlsx
 - Herencia de la superclase UnidadOperativa a subclases CentroCultivos y PlantaProceso.
-- Muestra implementación de  sobrescritura @overidde mostrarInformacion()
+- Muestra implementación de  usar la interfaz mostrarResumen()
 
 
 
@@ -115,7 +117,7 @@ git clone https://github.com/cvguzman/salmonttapp-with-csv-loader.git
 ---
 
 **Repositorio GitHub:** https://github.com/cvguzman/salmonttapp-with-csv-loader
-**Fecha de entrega:** 08/12/2025
+**Fecha de entrega:** 15/12/2025
 
 ---
 
