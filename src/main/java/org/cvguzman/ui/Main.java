@@ -75,15 +75,16 @@ public class Main {
 
         // Se muestra en consola resultados a través de un for each
         for (Registrable r : unidades) {
-            r.mostrarResumen();
-            if (r instanceof CentroCultivo) {
-                System.out.println("Este es el resumen para Centro cultivo");
+            if (r instanceof Colaborador) {
+                System.out.println("::::COLABORADOR RESPONSABLE::::");
+            } else if (r instanceof CentroCultivo) {
+                System.out.println("::::CENTRO CULTIVO::::");
             } else if (r instanceof PlantaProceso) {
-                System.out.println("Este es el resumen para Planta Proceso");
+                System.out.println("::::PLANTA PROCESO::::");
             }
+            r.mostrarResumen();
+            System.out.println(" ");
         }
-
         System.out.println(" ");
-
         }
     }
