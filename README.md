@@ -36,7 +36,8 @@ SalmonttApp/
  |         |          |     └── PlantaProceso.java
  |         |          |     └── UnidadOperativa.java
  │         │          └── ui/
- │         │                └── Main.java
+ │         │                └── Main.java  
+ │         │                └── Vista.java
  │         └── resources/
  |                          └── centros.txt
  ├── target/
@@ -74,7 +75,7 @@ Además de usar la interfaz mostrarResumen()
 
 # org.cvguzman.ui.
 
-Tiene la pantalla/interfaz principal del app. La clase Main que corre la aplicación.
+Tiene la clase principal del app. La clase Main que corre la aplicación.
 El flujo general empieza aquí: c͏argar d͏atos ͏y mostr͏ar en cons͏ola:
 
 - Datos en el archivo centros.txt
@@ -84,6 +85,7 @@ El flujo general empieza aquí: c͏argar d͏atos ͏y mostr͏ar en cons͏ola:
 - Herencia de la superclase UnidadOperativa a subclases CentroCultivos y PlantaProceso.
 - Muestra implementación de  usar la interfaz mostrarResumen()
 
+Además contiene la clase Vista, del cual se ejecuta la interfaz gráfica básica de SalmonttApp
 
 
 # resources
