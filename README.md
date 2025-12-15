@@ -85,7 +85,8 @@ El flujo general empieza aquí: c͏argar d͏atos ͏y mostr͏ar en cons͏ola:
 - Herencia de la superclase UnidadOperativa a subclases CentroCultivos y PlantaProceso.
 - Muestra implementación de  usar la interfaz mostrarResumen()
 
-Además contiene la clase Vista, del cual se ejecuta la interfaz gráfica básica de SalmonttApp
+Además contiene la clase Vista, del cual se ejecuta la interfaz gráfica básica de SalmonttApp 
+utilizando framework Swing
 
 
 # resources
