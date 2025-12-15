@@ -8,7 +8,7 @@ public class Vista  extends JFrame {
     // Constructor para realizar ls primera capa de modelo vista controlador JFrame
     public Vista() {
         setTitle("Unidad Operativa interna de Salmontt");
-        setSize(500,250);
+        setSize(1000,750);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
