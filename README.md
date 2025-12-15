@@ -73,6 +73,8 @@ Además de usar la interfaz mostrarResumen()
 La clase PlantaProceso modela una planta de procesamiento con capacidad diaria de producción.
 Además de usar la interfaz mostrarResumen()
 
+La clase Colaborador moldela a la persona encargada de dicho centro o planta de Salmontt. Además de usar la interfaz mostrarResumen()
+
 # org.cvguzman.ui.
 
 Tiene la clase principal del app. La clase Main que corre la aplicación.
