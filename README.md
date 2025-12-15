@@ -32,8 +32,10 @@ SalmonttApp/
  |         |          |     └── GestorUnidades.java
  │         │          ├── model/
  │         │          │     └── Producto.java
+ │         │          │     └── Colaborador.java
  |         |          |     └── CentroCultivo.java
  |         |          |     └── PlantaProceso.java
+ │         │          │     └── Registrable.java
  |         |          |     └── UnidadOperativa.java
  │         │          └── ui/
  │         │                └── Main.java  
@@ -75,6 +77,7 @@ Además de usar la interfaz mostrarResumen()
 
 La clase Colaborador moldela a la persona encargada de dicho centro o planta de Salmontt. Además de usar la interfaz mostrarResumen()
 
+La clase Registrable con la interfaz llamada mostrarResumen() representa el contrato que tendrán las clases hijas con la clase padre
 # org.cvguzman.ui.
 
 Tiene la clase principal del app. La clase Main que corre la aplicación.
