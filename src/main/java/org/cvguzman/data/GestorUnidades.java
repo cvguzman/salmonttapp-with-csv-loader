@@ -1,9 +1,6 @@
 package org.cvguzman.data;
 
-import org.cvguzman.model.CentroCultivo;
-import org.cvguzman.model.PlantaProceso;
-import org.cvguzman.model.Registrable;
-import org.cvguzman.model.UnidadOperativa;
+import org.cvguzman.model.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +8,7 @@ import java.util.List;
 // Se crea clase para instancias de prueba
 public class GestorUnidades {
 
-    public List<Registrable>  cargarUnidades() {
+    public List<Registrable> cargarUnidades() {
 
         List<Registrable> unidades = new ArrayList<>();
 
@@ -29,9 +26,21 @@ public class GestorUnidades {
         PlantaProceso planta2 = new PlantaProceso("Planta Aqua Chile", "Río Bueno", 2500);
         planta2.mostrarResumen();
 
+        // Se crean objetos para personal
+        Colaborador colaborador1 = new Colaborador("María Cancino", centro1.getNombre(), centro1.getComuna());
+        colaborador1.mostrarResumen();
+
+        Colaborador colaborador2 = new Colaborador("Rauíl Villalobos", planta2.getNombre(), planta2.getComuna());
+        colaborador2.mostrarResumen();
+
         // Agregamos en la lista
+
+        unidades.add(colaborador1);
+        unidades.add(colaborador2);
+
         unidades.add(centro1);
         unidades.add(centro2);
+
         unidades.add(planta1);
         unidades.add(planta2);
 
