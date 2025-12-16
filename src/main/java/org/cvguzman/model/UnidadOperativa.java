@@ -14,9 +14,10 @@ public abstract class UnidadOperativa implements Registrable {
 
     // Se crea interfaz que sera usado en clases hijas
 @Override
-    public void mostrarResumen() {
+    public Object mostrarResumen() {
         System.out.println("La planta  " + nombre + " es producido en " + comuna);
-    }
+    return "La planta  " + nombre + " es producido en " + comuna;
+}
 
     // Se crean accesores
     public String getNombre() {return nombre;}
