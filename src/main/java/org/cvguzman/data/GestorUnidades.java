@@ -27,10 +27,11 @@ public class GestorUnidades {
         planta2.mostrarResumen();
 
         // Se crean objetos para personal
-        Colaborador colaborador1 = new Colaborador("María Cancino", centro1.getNombre(), centro1.getComuna());
+        int telefono = 0;
+        Colaborador colaborador1 = new Colaborador("María Cancino", centro1.getNombre(), centro1.getComuna(), telefono);
         colaborador1.mostrarResumen();
 
-        Colaborador colaborador2 = new Colaborador("Rauíl Villalobos", planta2.getNombre(), planta2.getComuna());
+        Colaborador colaborador2 = new Colaborador("Rauíl Villalobos", planta2.getNombre(), planta2.getComuna(), telefono);
         colaborador2.mostrarResumen();
 
         // Agregamos en la lista
