@@ -13,9 +13,11 @@ public class CentroCultivo  extends UnidadOperativa {
     }
 
     @Override
-    public void mostrarResumen() {
+    public Object mostrarResumen() {
         System.out.println("El centro de cultivo " + getNombre() + " produce " + toneladasProducción + " toneladas " +
                 " en " + getComuna());
+        return "El centro de cultivo " + getNombre() + " produce " + toneladasProducción + " toneladas " +
+                " en " + getComuna();
     }
 
     // Se crea toString() para información mas legible en consola
