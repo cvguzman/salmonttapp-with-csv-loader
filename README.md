@@ -1,5 +1,5 @@
 ![Duoc UC](https://www.duoc.cl/wp-content/uploads/2022/09/logo-0.png)
-# 🧠 Actividad Formativa Semana 6 – Desarrollo Orientado a Objetos I
+# 🧠 Actividad Sumativa Semana 8 – Desarrollo Orientado a Objetos I
 
 ## 👤 Autor del proyecto
 - **Nombre completo:** Cinthya Guzmán
@@ -12,6 +12,9 @@
 ## 📘 Descripción general del sistema
 Este proyecto corresponde a la Actividad Sumativa de la asignatura *Desarrollo Orientado a Objetos I*. Se trata de un sistema organizado en paquetes, aplicando principios de encapsulamiento, composición  herencia y reutilizzación de clases
 El proyecto fue desarrollado a partir de un caso contextualizado (salmontt), abordando problemáticas reales y proponiendo una solución estructurada, modular y reutilizable.
+En esta etapa del proyecto se definió una interfaz de comportamiento común llamada mostrarResumen().
+Se utilizó colecciones genéricas para almacenar y recorrer objetos, diferenciándolos mediante instanceof.
+Se creó una interfaz visual simple facilitando su uso en contexto real con ayuda del JFrame.
 
 ---
 
@@ -90,8 +93,8 @@ El flujo general empieza aquí: c͏argar d͏atos ͏y mostr͏ar en cons͏ola:
 - Herencia de la superclase UnidadOperativa a subclases CentroCultivos y PlantaProceso.
 - Muestra implementación de  usar la interfaz mostrarResumen()
 
-Además contiene la clase Vista, del cual se ejecuta la interfaz gráfica básica de SalmonttApp 
-utilizando framework Swing
+Además contiene la clase Vista, del cual se ejecuta la interfaz visual simple de SalmonttApp 
+utilizando framework Swing.
 
 
 # resources
