@@ -4,7 +4,7 @@ public class Colaborador extends UnidadOperativa implements Registrable {
 
     private String colaborador;
 
-    public Colaborador(String colaborador, String nombre, String comuna) {
+    public Colaborador(String colaborador, String nombre, String comuna, int valor) {
         super(nombre, comuna);
         this.colaborador = colaborador;
     }
@@ -13,8 +13,9 @@ public class Colaborador extends UnidadOperativa implements Registrable {
         return colaborador;
     }
 
-    public void mostrarResumen() {
+    public Object mostrarResumen() {
         System.out.println("El colaborador " + getColaborador() + " está a cargo del " + getNombre() + " en " + getComuna());
+        return "El colaborador " + getColaborador() + " está a cargo del " + getNombre() + " en " + getComuna();
     }
 
     public String toString() {
