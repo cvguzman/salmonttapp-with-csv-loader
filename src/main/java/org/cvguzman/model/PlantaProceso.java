@@ -13,9 +13,11 @@ public class PlantaProceso  extends UnidadOperativa {
     }
 
     @Override
-    public void mostrarResumen() {
+    public Object mostrarResumen() {
         System.out.println("La planta de proceso " + getNombre() +  "  produce " + capacidadProceso + " circuitos de 10000" +
                 " en " + getComuna());
+        return "La planta de proceso " + getNombre() +  "  produce " + capacidadProceso + " circuitos de 10000" +
+                " en " + getComuna();
     }
 
 
