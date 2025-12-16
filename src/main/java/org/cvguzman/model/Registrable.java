@@ -4,5 +4,5 @@ package org.cvguzman.model;
 public interface Registrable {
 
     // Método sin implementación, solo se declara
-    void mostrarResumen();
+    Object mostrarResumen();
 }
