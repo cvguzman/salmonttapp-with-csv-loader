@@ -2,7 +2,6 @@ package org.cvguzman.ui;
 
 import org.cvguzman.data.GestorDatos;
 import org.cvguzman.data.GestorUnidades;
-import org.cvguzman.data.RegistroExcel;
 import org.cvguzman.model.*;
 
 import java.util.List;
@@ -16,6 +15,7 @@ public class Main {
         List<Producto> archivoInventario = gestorDatos.subirInventario("centros.txt");
 
         System.out.println("::::::INVENTARIO SALMONTT::::::");
+
         // Se implementa un for each para recorrer el archivo centros.txt
         for (Producto productos : archivoInventario) {
             System.out.println(productos);
@@ -35,31 +35,7 @@ public class Main {
                         Collectors.counting()
                 ));
         areasDeProduccion.forEach((area, cantidad) -> System.out.println(area + ": " + cantidad));
-
-        System.out.println(" ");
-
-        // Se comienza a visualizar la carga, lectura y extracción desde el Registros.xslx
-        System.out.println("::::::REGISTRO EXCEL SALMONTT::::::");
-
-        RegistroExcel registroExcel = new RegistroExcel();
-        registroExcel.subirRegistroExcel("Registros.xlsx");
-        registroExcel.subirTodos();
-
-        System.out.println(" ");
-
-        // Filtro del archivo excel Registros.xslx
-        System.out.println("::::::FILTRO POR AREA PRODUCCION DULCE DEL ARCHIVO EXCEL::::::");
-
-        // Muestra los elementos deseados
-        RegistroExcel registro = new RegistroExcel();
-        registro.subirRegistroExcel("Registros.xlsx");
-        List<Producto> cultivos = registroExcel.traerPorCultivo("dulce");
-
-        // Se crea forEach para recorrer la lista y extraer
-        for (Producto c : cultivos) {
-            System.out.println(c);
-        }
-
+        
         System.out.println(" ");
         System.out.println("::::::::HERENCIA::::::::");
         System.out.println(" ");
@@ -79,12 +55,8 @@ public class Main {
                 System.out.println("::::COLABORADOR RESPONSABLE::::");
             } else if (r instanceof CentroCultivo) {
                 System.out.println("::::CENTRO CULTIVO::::");
-            } else if (r instanceof PlantaProceso) {
-                System.out.println("::::PLANTA PROCESO::::");
             }
-            r.mostrarResumen();
-            System.out.println(" ");
-        }
-        System.out.println(" ");
+            System.out.println(r.mostrarResumen());
         }
     }
+}
