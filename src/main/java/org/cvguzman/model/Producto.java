@@ -1,6 +1,5 @@
 package org.cvguzman.model;
 
-import org.cvguzman.data.RegistroExcel;
 // Creación de clase para realizar Constructor
 public class Producto {
     private String nombreProducto;
@@ -39,7 +38,6 @@ public Producto(String nombreProducto, String areaProduccion, int cantodadTonela
     public void setCantidadTonelada(int cantidadTonelada) {
         this.cantidadTonelada = cantidadTonelada;
     }
-
 
     // Creamos un toStrin() para acceder mas facilmente a la información
     public String toString() {
