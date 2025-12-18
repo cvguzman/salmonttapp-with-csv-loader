@@ -1,31 +1,31 @@
 package org.cvguzman.model;
 
 // Se crea subclase que  heredará atributos de la superclase
-public class CentroCultivo  extends UnidadOperativa {
+public class CentroCultivo  extends UnidadOperativa  {
 
     // Creación atributo privado
-    private int toneladasProducción;
+    private int toneladasProduccion;
 
     // Se crea constructor con atributos incluyendo atributos superclase
     public CentroCultivo(String nombre, String comuna, int toneladasProducción) {
         super(nombre, comuna);
-        this.toneladasProducción = toneladasProducción;
+        this.toneladasProduccion = toneladasProducción;
     }
 
     @Override
-    public Object mostrarResumen() {
-        System.out.println("El centro de cultivo " + getNombre() + " produce " + toneladasProducción + " toneladas " +
-                " en " + getComuna());
-        return "El centro de cultivo " + getNombre() + " produce " + toneladasProducción + " toneladas " +
-                " en " + getComuna();
+    public String mostrarResumen() {
+        return "El centro de cultivo " + getNombre()
+                + " ubicado en " + getComuna()
+                + " produce " + toneladasProduccion + " toneladas ";
     }
 
+@Override
     // Se crea toString() para información mas legible en consola
     public String toString() {
         return "UnidadOperativa{" +
                 "nombre= '" + getNombre() + '\'' +
                 ", comuna= '" + getComuna() + '\'' +
-                ", toneladasProduccion= '" + toneladasProducción + '\'' +
+                ", toneladasProduccion= '" + toneladasProduccion + '\'' +
                 '}';
     }
 }
