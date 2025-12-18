@@ -5,7 +5,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 // Clase destinada a la creación de la interfaz gráfica básica
 public class Vista  extends JFrame {
@@ -94,14 +93,12 @@ private void crearEntidad() {
             return;
         }
 
-    UnidadOperativa entidad;
+    UnidadOperativa entidad = null;
         if(comboTipo.getSelectedItem().equals("Centro de Cultivo")) {
             entidad = new CentroCultivo(nombre, comuna, telefono);
         } else if (comboTipo.getSelectedItem().equals("Colaborador")) {
-            entidad = new Colaborador(colaborador, nombre, comuna,telefono);
-        } else {
-            entidad = new PlantaProceso(nombre, comuna, telefono);
-    }
+            entidad = new Colaborador(nombre, comuna, colaborador, telefono);
+        }
 
         entidades.add(entidad);
         modeloLista.addElement(entidad.mostrarResumen().toString());
