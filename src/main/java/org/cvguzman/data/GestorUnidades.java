@@ -12,38 +12,30 @@ public class GestorUnidades {
 
         List<Registrable> unidades = new ArrayList<>();
 
-        // Se crean objetos para CentroCultivo
-        CentroCultivo centro1 = new CentroCultivo("Centro Llanquihue", "Puerto Montt", 116);
-        centro1.mostrarResumen();
-
-        CentroCultivo centro2 = new CentroCultivo("Centro Frutillar", "Puerto Montt", 322);
-        centro2.mostrarResumen();
-
-        // Se crean objetos para PlantaProceso
-        PlantaProceso planta1 = new PlantaProceso("Planta Pacific Blue", "Aysén", 3000);
-        planta1.mostrarResumen();
-
-        PlantaProceso planta2 = new PlantaProceso("Planta Aqua Chile", "Río Bueno", 2500);
-        planta2.mostrarResumen();
-
-        // Se crean objetos para personal
-        int telefono = 0;
-        Colaborador colaborador1 = new Colaborador("María Cancino", centro1.getNombre(), centro1.getComuna(), telefono);
-        colaborador1.mostrarResumen();
-
-        Colaborador colaborador2 = new Colaborador("Rauíl Villalobos", planta2.getNombre(), planta2.getComuna(), telefono);
-        colaborador2.mostrarResumen();
-
         // Agregamos en la lista
 
-        unidades.add(colaborador1);
-        unidades.add(colaborador2);
-
-        unidades.add(centro1);
-        unidades.add(centro2);
-
-        unidades.add(planta1);
-        unidades.add(planta2);
+        unidades.add(
+                new CentroCultivo(
+                        "Aqua",
+                        "Frutillar",
+                        2445));
+        unidades.add(
+                new CentroCultivo(
+                        "Espez",
+                        "Osorno",
+                        1449));
+        unidades.add(
+                new Colaborador(
+                        "Aqua",
+                        "Puerto Octay",
+                        "María Cancino",
+                        456788885));
+        unidades.add(
+                new Colaborador(
+                        "Salpez",
+                        "Puerto Montt",
+                        "Raúl Villalobos",
+                        34567789));
 
         return unidades;
     }
