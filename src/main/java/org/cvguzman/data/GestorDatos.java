@@ -9,60 +9,92 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+
+// Clase encargada de la lectura de archivos externos y de la carga de datos al modelo producto
 public class GestorDatos {
 
+    // Método que lee un archivo de texto y lo transforma en una lista de productos
     public List<Producto> subirInventario(String listado) {
 
+        // Lista donde se almacenarán los productos leídos desde el archivo
         List<Producto> lista = new ArrayList<>();
 
-        // Indicamos la ruta para buscar el archivo y cargarlo
+        // Se obtiene el ClassLoader para acceder a archivos dentro del proyecto
         ClassLoader archivo = getClass().getClassLoader();
         try {
-            // Se crea flujo de entrada de datos
+
+            // Se abre el archivo como flujo de entrada
             InputStream lecturaDatos = archivo.getResourceAsStream(listado);
+
+            // Validación: si el archivo no existe, se retorna una lista vacía
             if (lecturaDatos == null) {
                 System.out.println("No se encontró el archivo: " + listado);
                 return lista;
             }
 
             try {
-                // Utilización del BufferedReader para permitir lectura de líneas completas
+
+                // BufferedReader permite leer el archivo línea por línea
                 BufferedReader br = new BufferedReader(new InputStreamReader(lecturaDatos));
                 String linea;
                 int numeroLinea = 0;
 
+                // Se recorre el archivo hasta el final
                 while ((linea = br.readLine()) != null) {
                     numeroLinea++;
+
+                    // Se ignoran líneas vacías
                     if (linea.trim().isEmpty()) continue;
 
-                    // Se realiza la separación del ; con ayuda del split()
+                    // Se separan los datos usando ';' como delimitador
                     String[] seccion = linea.split(";");
+
+                    // Validación: cada línea debe tener exactamente 3 campos
                     if (seccion.length != 3) {
                         System.out.println("Línea " + numeroLinea + " es incorrecta");
                         continue;
                     }
 
+                    // Se asignan los valores a variables
                     String nombreProducto = seccion[0].trim();
                     String areaProduccion = seccion[1].trim();
                     String cantidadToneladaString = seccion[2].trim();
                     try {
-                        // Se transforma el tipo de dato int a string con el Integer.parseInt()
+
+                        // Conversión del valor String a int
                         int cantidadTonelada = Integer.parseInt(cantidadToneladaString);
-                        Producto producto = new Producto(nombreProducto, areaProduccion, cantidadTonelada);
+
+                        // Se crea el objeto Producto y se agrega a la lista
+                        Producto producto = new Producto(
+                                nombreProducto,
+                                areaProduccion,
+                                cantidadTonelada
+                        );
                         lista.add(producto);
 
-                        // Se maneja el error con exception
                     } catch (Exception e) {
-                        System.err.println("Se detectó un error en el programa");
-                    }
 
+                        // Manejo de error si la conversión numérica falla
+                        System.err.println("Error en la línea "
+                                + numeroLinea
+                                +
+                                ": cantidad no válida"
+                        );
+                    }
                 }
-            } catch (NullPointerException | IOException e) {
-                System.err.println("Se detectó un error en el programa");
+            } catch (IOException e) {
+
+                // Manejo de errores de lectura del archivo
+                System.err.println("Error al leer el archivo");
+            } finally {
+
+                // Este bloque siempre se ejecuta
+                System.out.println("Archivo cargado");
             }
+
+            // Se retorna la lista con los productos cargados
             return lista;
         } finally {
-            System.out.println("Archivo cargado");
         }
     }
 }
