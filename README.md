@@ -46,8 +46,7 @@ SalmonttApp/
  ├── target/
  ├── .gitignore
  ├── pom.xml
- ├── README.md
- └── Registros.xlsx
+ └──  README.md
 
 ````
 El proyecto está ordenado con una estructura sencilla que separa las tareas:
