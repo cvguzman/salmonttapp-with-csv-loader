@@ -68,7 +68,7 @@ public class Vista  extends JFrame {
         JPanel panel = new JPanel(new GridLayout(10, 10, 10, 10));
 
         // Selección del tipo de entidad
-        panel.add(new JLabel("Tipo de entidad"));
+        panel.add(new JLabel("Tipo de Entidad"));
         comboTipo = new JComboBox<>(new String[]{"Colaborador", "Centro de Cultivo"});
         panel.add(comboTipo);
 
