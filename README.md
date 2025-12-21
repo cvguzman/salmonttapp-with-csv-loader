@@ -81,7 +81,7 @@ El flujo general empieza aquí: c͏argar d͏atos ͏y mostr͏ar en cons͏ola:
 
 - Datos en el archivo centros.txt
 - Filtro de datos de archivo centros.txt
-- Herencia de la superclase UnidadOperativa a subclases CentroCultivos y PlantaProceso.
+- Herencia de la superclase UnidadOperativa a subclases CentroCultivo y Colaborador.
 - Muestra implementación de  usar la interfaz mostrarResumen()
 
 Además contiene la clase Vista, del cual se ejecuta la interfaz visual simple de SalmonttApp 
