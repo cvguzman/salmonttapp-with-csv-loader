@@ -13,6 +13,7 @@ Representa la interfaz gráfica (GUI) del sistema utilizando Swing.
 Permite crear y visualizar distintas UnidadesOperativas mediante interacción con el usuario.
 Esta clase cumple el rol de la vista dentro del patrón MVC
  */
+
 public class Vista  extends JFrame {
 
     // ===============================
@@ -25,11 +26,12 @@ public class Vista  extends JFrame {
     private JTextField txtComuna;
     private JTextField txtTefono;
     private JComboBox<String> comboTipo;
+    private JLabel lblColaborador;
+    private JLabel lblTelefono;
 
     // ===============================
     // 2. COMPONENTES DE LISTADO
     // ===============================
-
 
     // Lista visual donde se muestran las entidades creadas
     private JList<String> listaEntidades;
@@ -70,23 +72,28 @@ public class Vista  extends JFrame {
         comboTipo = new JComboBox<>(new String[]{"Colaborador", "Centro de Cultivo"});
         panel.add(comboTipo);
 
+        // Listener para reaccionar al cambio de selección
+        comboTipo.addActionListener(e -> actualizarFormulario());
+
         // Campo Colaborador
-        panel.add(new JLabel("Colaborador"));
+        lblColaborador = new JLabel("Colaborador");
+        panel.add(lblColaborador);
         txtColaborador = new JTextField();
         panel.add(txtColaborador);
 
         // Campo teléfono del colaborador
-        panel.add(new JLabel("Teléfono"));
+        lblTelefono = new JLabel("Teléfono");
+        panel.add(lblTelefono);
         txtTefono = new JTextField();
         panel.add(txtTefono);
 
         // Campo nombre de la planta o centro
-        panel.add(new JLabel("Nombre Planta"));
+        panel.add(new JLabel("Nombre Centro"));
         txtNombre = new JTextField();
         panel.add(txtNombre);
 
         // Campo ubicación comuna
-        panel.add(new JLabel("Comuna Planta"));
+        panel.add(new JLabel("Comuna Centro"));
         txtComuna = new JTextField();
         panel.add(txtComuna);
 
@@ -139,14 +146,14 @@ public class Vista  extends JFrame {
     String nombre = txtNombre.getText();
     String comuna = txtComuna.getText();
 
-    int telefono;
+    int telefono = 0;
     // Validación numérica del teléfono
     try {
         telefono = Integer.parseInt(txtTefono.getText().trim());
     } catch (NumberFormatException ex) {
         JOptionPane.showMessageDialog(
                 this,
-                "Ingrese números en el ampo teléfono por favor",
+                "Ingrese números en el campo teléfono",
                 "Error numérico",
                 JOptionPane.ERROR_MESSAGE
         );
@@ -203,7 +210,32 @@ private void limpiarFormulario() {
     }
 
     // ===============================
-    // 7. PUNTO DE ENTRADA GRÁFICO
+    // 7. ACTUALIZACIÓN DEL FORMULARIO
+    // ===============================
+
+    private void actualizarFormulario() {
+        String tipo = (String) comboTipo.getSelectedItem();
+        boolean esCentroCultivo = "Centro de Cultivo".equals(tipo);
+
+        // Métodos exclusivo para Colaborador
+        lblColaborador.setVisible(!esCentroCultivo);
+        txtColaborador.setVisible(!esCentroCultivo);
+
+        lblTelefono.setVisible(!esCentroCultivo);
+        txtTefono.setVisible(!esCentroCultivo);
+
+        if(esCentroCultivo) {
+            txtColaborador.setText("");
+            txtTefono.setText("");
+        }
+
+        // Refresca la vista
+        revalidate();
+        repaint();
+    }
+
+    // ===============================
+    // 8. PUNTO DE ENTRADA GRÁFICO
     // ===============================
 
     // Método main para ejecutar la aplicación gráfica
