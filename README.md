@@ -1,5 +1,5 @@
 ![Duoc UC](https://www.duoc.cl/wp-content/uploads/2022/09/logo-0.png)
-# 🧠 Actividad Sumativa Semana 8 – Desarrollo Orientado a Objetos I
+# 🧠 Evaluación Final Transversal Semana 9 – Desarrollo Orientado a Objetos I
 
 ## 👤 Autor del proyecto
 - **Nombre completo:** Cinthya Guzmán
@@ -10,11 +10,11 @@
 ---
 
 ## 📘 Descripción general del sistema
-Este proyecto corresponde a la Actividad Sumativa de la asignatura *Desarrollo Orientado a Objetos I*. Se trata de un sistema organizado en paquetes, aplicando principios de encapsulamiento, composición  herencia y reutilizzación de clases
+Este proyecto corresponde a laEvaluación Final Transversal de la asignatura *Desarrollo Orientado a Objetos I*. Se trata de un sistema organizado en paquetes, aplicando principios de encapsulamiento, composición  herencia y reutilizzación de clases
 El proyecto fue desarrollado a partir de un caso contextualizado (salmontt), abordando problemáticas reales y proponiendo una solución estructurada, modular y reutilizable.
 En esta etapa del proyecto se definió una interfaz de comportamiento común llamada mostrarResumen().
 Se utilizó colecciones genéricas para almacenar y recorrer objetos, diferenciándolos mediante instanceof.
-Se creó una interfaz visual simple facilitando su uso en contexto real con ayuda del JFrame.
+Se creó una interfaz visual simple facilitando su uso en contexto real con ayuda de Swing
 
 ---
 
@@ -31,13 +31,11 @@ SalmonttApp/
  │         │    └── org.cvguzman/
  │         │          ├── data/
  │         │          │     ├── GestorDatos.java
- │         │          │     └── RegistroExcel.java
  |         |          |     └── GestorUnidades.java
  │         │          ├── model/
  │         │          │     └── Producto.java
  │         │          │     └── Colaborador.java
  |         |          |     └── CentroCultivo.java
- |         |          |     └── PlantaProceso.java
  │         │          │     └── Registrable.java
  |         |          |     └── UnidadOperativa.java
  │         │          └── ui/
@@ -60,8 +58,6 @@ Tiene clases que se ocupan de manejar y acceder a datos.
 
 La clase GestorDatos lee y carga datos desde archivos .txt. Agrupa la lógica sobre el acceso a la información externa.
 
-La clase RegistroExcel en hoja de cálculo facilita leer registros de un archivo .xlsx. Ofrece métodos comunes para trabajar con filas y celdas.
-
 La clase Gestor unidades se encarga de crear y entregar objetos de las subclases, cumple el rol de proovedor de datos, 
 además de implementar la interfaz mostrarResumen() a clases hijas
 
@@ -71,16 +67,13 @@ Incluye los clases que representan las partes de SalmonttApp.
 
 La clase Producto: Modelo que habla de un producto del sistema con cosas como nombre, zona de hacer, tipo de planta y cuantas toneladas.
 
-
 La clase CentroCultivo agrega atributos propios del cultivo en mar: capacidadTonelada.
 Además de usar la interfaz mostrarResumen()
 
-La clase PlantaProceso modela una planta de procesamiento con capacidad diaria de producción.
-Además de usar la interfaz mostrarResumen()
-
-La clase Colaborador moldela a la persona encargada de dicho centro o planta de Salmontt. Además de usar la interfaz mostrarResumen()
+La clase Colaborador moldela a la persona encargada del centro de la empresa Salmontt. Además de usar la interfaz mostrarResumen()
 
 La clase Registrable con la interfaz llamada mostrarResumen() representa el contrato que tendrán las clases hijas con la clase padre
+
 # org.cvguzman.ui.
 
 Tiene la clase principal del app. La clase Main que corre la aplicación.
@@ -88,8 +81,6 @@ El flujo general empieza aquí: c͏argar d͏atos ͏y mostr͏ar en cons͏ola:
 
 - Datos en el archivo centros.txt
 - Filtro de datos de archivo centros.txt
-- Datos en el archivo Registros.xlsx
-- Filtro de datod archivo Registros.xlsx
 - Herencia de la superclase UnidadOperativa a subclases CentroCultivos y PlantaProceso.
 - Muestra implementación de  usar la interfaz mostrarResumen()
 
@@ -98,15 +89,11 @@ utilizando framework Swing.
 
 
 # resources
-Para͏ pon͏e͏r archivos ͏fuera͏ q͏ue necesita la app, como el arch͏ivo Excel Re͏g͏istros͏.xlsx d͏el usuario͏ o lugar donde es͏tá la entrada del͏ ͏programa.
+Para͏ pon͏e͏r archivos ͏fuera͏ q͏ue necesita la app, como el arch͏ivo centros.txt.
 
 # pom.xml
 
 Define la configuración principal del proyecto Maven, definiendo su nombre, versión, dependencias y plugins.
-
-# Registros.xslx
-
-Contiene los datos utilizados por la aplicación para cargar y procesar información de productos. Es la fuente principal desde donde el programa obtiene los registros para mostrarlos o manipularlos.
 
 ---
 
@@ -120,15 +107,17 @@ git clone https://github.com/cvguzman/salmonttapp-with-csv-loader.git
 
 2. Abre el proyecto en IntelliJ IDEA.
 
-3. Ejecuta el archivo `Main.java` desde el paquete `ui`.
+3. Ejecuta el archivo `Main.java` desde el paquete `ui` para resultados en consola.
 
-4. Sigue las instrucciones en consola o en la interfaz gráfica (si corresponde).
+4. Ejecuta el archivo `Vista.java` desde el paquete `ui` para interfaz visual.
+
+5. Sigue las instrucciones en consola o en la interfaz gráfica (si corresponde).
 
 
 ---
 
 **Repositorio GitHub:** https://github.com/cvguzman/salmonttapp-with-csv-loader
-**Fecha de entrega:** 15/12/2025
+**Fecha de entrega:** 21/12/2025
 
 ---
 
